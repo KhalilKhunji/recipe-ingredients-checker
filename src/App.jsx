@@ -1,4 +1,9 @@
-import './App.css';
+const styleAvailable = {
+    color: 'green'
+}
+const styleNotAvailable = {
+    color: 'red'
+}
 
 const App = () => {
   const recipe = [
@@ -12,9 +17,11 @@ const App = () => {
       <h1>Recipe Ingredients Checker</h1>
       <ul>
         {recipe.map((ingredient, index) => (
-          <li key={index} className={ingredient.available ? 'available' : 'not-available'}>
+          <div style={ingredient.available ? styleAvailable : styleNotAvailable}>
+          <li key={index}>
             {ingredient.item}
           </li>
+          </div>
         ))}
       </ul>
     </>
